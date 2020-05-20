@@ -25,7 +25,7 @@ SECRET_KEY = '86!y82%i-4styl5^d3i0j99$1nh2o7gad=0$3q!la-jgsari0*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -74,10 +74,19 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
+    'sqllite': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    },
+
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'edjango',
+        'PASSWORD': 'edjango',
+        'USER': 'edjango',
+
     }
+
 }
 
 
