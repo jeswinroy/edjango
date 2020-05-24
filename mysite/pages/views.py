@@ -20,3 +20,14 @@ def  register_view(request):
 
     return render(request, 'pages/register.html')
 
+def  login_view(request):
+
+    if request.method == 'POST':
+        email = request.POST['email']
+        password = request.POST['password']
+        user=authenticate(request, username=email, password=password)
+        if user is not None:
+            login(request,user)
+            return redirect('/dashboard')
+
+    return render(request, 'pages/login.html')
