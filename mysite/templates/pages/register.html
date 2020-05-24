@@ -1,5 +1,14 @@
+{% extends 'pages/base.html' %}
+
+{% block body %}
+
+<h2>user Reg Form </h2>
 <form action="register" method="post">
  {% csrf_token %}
-<input type="text" name="full_name" > <br />
+<input type="text" name="full_name" placeholder="Full name" value="demo name" > <br />
+<input type="email" name="email" placeholder="Email/username" value="demo@demo.com"  > <br />
+<input type="password" name="password" placeholder="password" value="demo"  > <br />
 <input type="submit">
 </form>
+
+{% endblock %}
